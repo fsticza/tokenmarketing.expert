@@ -14,47 +14,58 @@
         <follow-me />
       </div>
       <div class="col-sm-6">
-        <form action="" class="needs-validation" @submit.prevent="onContactSubmit" novalidate>
+        <div id="thanks" class="thanks" tabindex="0">
+          Thank you for your interest.
+        </div>
+        <form action="https://formspree.io/ferenc.sticza@gmail.com" method="POST"
+        class="needs-validation" novalidate @submit.prevent="onContactSubmit">
           
           <div class="form-group">
-            <label class="form-label" for="">Full name</label>
-            <input type="text" class="form-control" name="name" maxlength="50" required />
+            <label class="form-label" for="name-field">Full name</label>
+            <input id="name-field" type="text" class="form-control" name="name" maxlength="50" required />
             <div class="invalid-feedback">
               Please provide a valid name.
             </div>
           </div>
 
           <div class="form-group">
-            <label class="form-label" for="">Country</label>
-            <input type="text" class="form-control" name="country" maxlength="30" required />
+            <label class="form-label" for="country-field">Country</label>
+            <input id="country-field" type="text" class="form-control" name="country" maxlength="30" required />
             <div class="invalid-feedback">
               Please provide a valid contry.
             </div>
           </div>
 
           <div class="form-group">
-            <label class="form-label" for="">Email</label>
-            <input type="email" class="form-control" name="email" maxlength="30" required />
+            <label class="form-label" for="email-field">Email</label>
+            <input id="email-field" type="email" class="form-control" name="email" maxlength="30" required />
             <div class="invalid-feedback">
               Please provide a valid email.
             </div>
           </div>
 
           <div class="form-group">
-            <label class="form-label" for="">Phone</label>
-            <input type="tel" class="form-control" name="tel" maxlength="30" required />
+            <label class="form-label" for="phone-field">Phone</label>
+            <input id="phone-field" type="tel" class="form-control" name="tel" maxlength="30" required />
             <div class="invalid-feedback">
               Please provide a valid phone.
             </div>
           </div>
 
           <div class="form-group">
-            <label class="form-label" for="">Telegram (optional)</label>
-            <textarea class="form-control" minlength="10" name="telegram"></textarea>
+            <label class="form-label" for="telegram-field">Telegram (optional)</label>
+            <input id="telegram-field" class="form-control" name="telegram" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="message-field">Message (optional)</label>
+            <textarea id="message-field" class="form-control" minlength="10" name="message"></textarea>
             <div class="invalid-feedback">
               Please write at least 10 characters.
             </div>
           </div>
+
+          <input type="hidden" name="_next" value="#thanks" />
 
           <button type="submit" class="btn btn-primary">
             Done
@@ -74,8 +85,7 @@ export default {
   methods: {
     onContactSubmit (ev) {
       if(ev.target.checkValidity()) {
-        // console.log('valid')
-        return
+        ev.target.submit()
       }
       ev.target.classList.add('was-validated')
     }

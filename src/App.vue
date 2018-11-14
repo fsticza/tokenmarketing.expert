@@ -22,15 +22,16 @@
 
       <section class="section container text-center" id="packages">
         <div class="row">
-          <div class="col-sm-6 offset-sm-3">
+          <div class="col-sm-6 offset-sm-3 mb-4">
             <h1 class="section__lead">Advisory packages</h1>
             <p>Packaged services range from a simple consulting role to leading the marketing team and writing the strategy, to using my formidable network to spread the word.</p>
           </div>
         </div>
 
         <div class="row">
-          <article class="col-sm-4">
-            <h1>Gold</h1>
+          <article class="col-sm-4 mt-4">
+            <img src="./assets/img/gold.svg" alt="">
+            <h1 class="package__title">Gold</h1>
             <ul class="list-unstyled">
               <li v-for="(feature, index) in features"
                 :key="index"
@@ -40,9 +41,27 @@
                 {{feature.text}}
               </li>
             </ul>
+
+            <div class="package__price-box">
+              <div class="package__price-text">
+                The service fee for Gold is 
+              </div>
+              <div class="package__price">
+                EUR <span>50.000</span> 
+              </div>
+              <em>
+                +1% token offering
+              </em>
+            </div>
+
+            <div>
+              <a href="#contact" class="btn btn-primary">I'm interested</a>
+            </div>
+
           </article>
-          <article class="col-sm-4">
-            <h1>Platinum</h1>
+          <article class="col-sm-4 mt-4">
+            <img src="./assets/img/platinum.svg" alt="">
+            <h1 class="package__title">Platinum</h1>
             <ul class="list-unstyled">
               <li v-for="(feature, index) in features"
                 :key="index"
@@ -52,9 +71,24 @@
                 {{feature.text}}
               </li>
             </ul>
+            <div class="package__price-box">
+              <div class="package__price-text">
+                The service fee for Platinum is 
+              </div>
+              <div class="package__price">
+                EUR <span>100.000</span> 
+              </div>
+              <em>
+                +1% token offering
+              </em>
+            </div>
+            <div>
+              <a href="#contact" class="btn btn-primary">I'm interested</a>
+            </div>
           </article>
-          <article class="col-sm-4">
-            <h1>Diamond</h1>
+          <article class="col-sm-4 mt-4">
+            <img src="./assets/img/diamond.svg" alt="">
+            <h1 class="package__title">Diamond</h1>
             <ul class="list-unstyled">
               <li v-for="(feature, index) in features"
                 :key="index"
@@ -64,6 +98,20 @@
                 {{feature.text}}
               </li>
             </ul>
+            <div class="package__price-box">
+              <div class="package__price-text">
+                The service fee for Diamond is 
+              </div>
+              <div class="package__price">
+                EUR <span>150.000</span> 
+              </div>
+              <em>
+                + 1% token offering, not including travel and accommodation costs with appropriate Business Class carriers and hotels
+              </em>
+            </div>
+            <div>
+              <a href="#contact" class="btn btn-primary">I'm interested</a>
+            </div>
           </article>
         </div>
       
@@ -162,13 +210,47 @@ body {
   }
 }
 
+.package__title {
+  margin: 25px 0 20px;
+}
+
+.package__price-box {
+  border-top: 1px dotted $gray;
+  padding-top: 50px;
+  margin-top: 50px;
+  min-height: 280px;
+
+  em {
+    font-size: .875rem;
+  }
+}
+
+.package__price-text {
+  text-transform: uppercase;
+  color: $gray;
+  margin: 10px 0 0;
+}
+
+.package__price {
+  font-family: $headings-font-family;
+  font-size: 1.25rem;
+  line-height: 69px;
+  
+  span {
+    padding-left: 5px;
+    font-weight: 900;
+    font-size: 3rem;
+  }
+}
+
+
 .feature {
   margin: 1rem 0;
 }
 
 .feature--disabled {
   text-decoration: line-through;
-  color: #b9b9b9;
+  color: #c7bfbf;
 }
 
 .section {
