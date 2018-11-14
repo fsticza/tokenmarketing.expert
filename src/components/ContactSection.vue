@@ -124,4 +124,21 @@ export default {
   }
 }
 
+.thanks {
+  height: 1px;
+  overflow: hidden;
+  padding: 10px;
+  outline: 0;
+  opacity: .01;
+  color: #fff;
+  transition: opacity .2s, background .2s;
+
+  &:focus {
+    height: auto;
+    opacity: 1;
+    background: $primary;
+    margin-bottom: 20px;
+  }
+}
+
 </style>
