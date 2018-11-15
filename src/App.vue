@@ -29,7 +29,7 @@
         </div>
 
         <div class="row">
-          <article class="col-sm-4 mt-4">
+          <article class="package col-md-4 mt-4">
             <img src="./assets/img/gold.svg" alt="">
             <h1 class="package__title">Gold</h1>
             <ul class="list-unstyled">
@@ -54,12 +54,12 @@
               </em>
             </div>
 
-            <div>
+            <div class="mt-4">
               <a href="#contact" class="btn btn-primary">I'm interested</a>
             </div>
 
           </article>
-          <article class="col-sm-4 mt-4">
+          <article class="package col-md-4 mt-4">
             <img src="./assets/img/platinum.svg" alt="">
             <h1 class="package__title">Platinum</h1>
             <ul class="list-unstyled">
@@ -82,11 +82,12 @@
                 +1% token offering
               </em>
             </div>
-            <div>
+
+            <div class="mt-4">
               <a href="#contact" class="btn btn-primary">I'm interested</a>
             </div>
           </article>
-          <article class="col-sm-4 mt-4">
+          <article class="package col-md-4 mt-4">
             <img src="./assets/img/diamond.svg" alt="">
             <h1 class="package__title">Diamond</h1>
             <ul class="list-unstyled">
@@ -109,7 +110,8 @@
                 + 1% token offering, not including travel and accommodation costs with appropriate Business Class carriers and hotels
               </em>
             </div>
-            <div>
+
+            <div class="mt-4">
               <a href="#contact" class="btn btn-primary">I'm interested</a>
             </div>
           </article>
@@ -210,6 +212,10 @@ body {
   }
 }
 
+.package {
+  margin-bottom: 80px;
+}
+
 .package__title {
   margin: 25px 0 20px;
 }
@@ -218,9 +224,12 @@ body {
   border-top: 1px dotted $gray;
   padding-top: 50px;
   margin-top: 50px;
-  min-height: 280px;
 
   em {
+    @include media-breakpoint-up(sm) {
+      min-height: 120px;
+    }
+    display: block;
     font-size: .875rem;
   }
 }

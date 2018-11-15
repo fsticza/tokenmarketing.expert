@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="row">
-      <div class="col-sm-5 offset-sm-1">
+      <div class="col-md-6">
         <img class="fingerprint" style="left:-160px;top:40px; filter: invert(.5)" src="../assets/img/fingerprint.svg" alt="">
         <h1 class="section__title">Contact</h1>
         <h2 class="section__lead">Send me a message</h2>
@@ -13,7 +13,7 @@
 
         <follow-me />
       </div>
-      <div class="col-sm-6">
+      <div class="col-md-5 offset-md-1">
         <div id="thanks" class="thanks" tabindex="0">
           Thank you for your interest.
         </div>
